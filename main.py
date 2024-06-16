@@ -3,6 +3,7 @@ from ttkbootstrap.constants import *
 from tkinter import messagebox, filedialog
 from pytube import YouTube
 from threading import Thread
+from PIL import Image, ImageTk
 
 def download_video():
     url = url_entry.get()
@@ -35,6 +36,9 @@ def progress_function(stream, chunk, bytes_remaining):
 root = ttk.Window(themename="cosmo")
 root.title("YouTube Video Downloader")
 root.geometry("600x300")
+
+# Carregando imagem de fundo
+bg_image = Image.open(".")
 
 # Criando widgets com ttkbootstrap
 url_label = ttk.Label(root, text="URL do Vídeo:", bootstyle="primary")
